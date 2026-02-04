@@ -3,7 +3,7 @@ class Artist:
         self.artist_id = artist_id
         self.name = name
         self.num_objects = num_objects
-        self.p = num_objects
+
 
     def __str__(self):
         return f"{self.name} (ID: {self.artist_id})"

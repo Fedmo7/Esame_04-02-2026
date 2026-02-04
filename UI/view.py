@@ -26,7 +26,10 @@ class View:
     def set_controller(self, controller):
         self._controller = controller
 
+
     def popola_dropdown_ruolo(self, ruoli):
+
+
         self.dd_ruolo.options = [ft.dropdown.Option(text=r) for r in ruoli]
         self.dd_ruolo.update()
 
@@ -40,6 +43,7 @@ class View:
         self.txt_title = ft.Text("Gestione Artisti", size=30, weight=ft.FontWeight.BOLD)
 
         self.dd_ruolo = ft.Dropdown(label="Seleziona ruolo artista", width=250)
+
 
         self.dd_iniziale = ft.Dropdown(label="Artista Iniziale", width=250, disabled=True)
 
@@ -68,6 +72,8 @@ class View:
 
         self._page.scroll = "adaptive"
         self._page.update()
+
+        self._controller.take_ruoli()
 
     def _cambia_tema(self, e):
         self._page.theme_mode = ft.ThemeMode.DARK if self.toggle_tema.value else ft.ThemeMode.LIGHT
